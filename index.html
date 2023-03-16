@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			justify-content: center;
+			margin: 0 auto;
+			min-height: 100vh;
+			max-width: fit-content;
+		}
+	</style>
+	<title>IP Location</title>
+</head>
+<body>
+	<h1>IP Location</h1>
+    <h4>by <a href="https://github.com/PinkOrca-net">Pink Orca</a></h4>
+	<p>Enter an IP address to retrieve location info:</p>
+	<form id="ipform">
+		<input type="text" name="ipaddress" id="ipaddress">
+		<input type="submit" value="Submit">
+	</form>
+
+	<div id="ipdetails"></div>
+
+    <script src="ipdetails.js"></script>
+</body>
+</html>
