@@ -6,13 +6,13 @@
 		$ipdetails = json_decode($data);
 
 		if($ipdetails->status == 'success') {
-			echo '<p><strong>IP Address:</strong> ' . $ipdetails->query . '</p>';
-			echo '<p><strong>Country:</strong> ' . $ipdetails->country . '</p>';
-			echo '<p><strong>State/Province:</strong> ' . $ipdetails->regionName . '</p>';
-			echo '<p><strong>City:</strong> ' . $ipdetails->city . '</p>';
-			echo '<p><strong>ISP:</strong> ' . $ipdetails->isp . '</p>';
+			echo '<p class="paragraph"><strong>IP Address:</strong> ' . $ipdetails->query . '</p>';
+			echo '<p class="paragraph"><strong>Country:</strong> ' . $ipdetails->country . '</p>';
+			echo '<p class="paragraph"><strong>State/Province:</strong> ' . $ipdetails->regionName . '</p>';
+			echo '<p class="paragraph"><strong>City:</strong> ' . $ipdetails->city . '</p>';
+			echo '<p class="paragraph"><strong>ISP:</strong> ' . $ipdetails->isp . '</p>';
 		} else {
-			echo '<p>No details found for this IP address.</p>';
+			echo '<p class="paragraph">No details found for this IP address.</p>';
 		}
 	}
 ?>
