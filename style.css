@@ -2,7 +2,6 @@
 
 * {
     box-sizing: border-box;
-    user-select: none;
     outline: none;
     padding: 0;
     margin: 0;
@@ -11,9 +10,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto');
 
 body {
+    background-color: #fff;
+    color-scheme: #fff;
     height: 100vh;
     width: calc(100vw - 32px);
-    max-width: 340px;
+    max-width: 375px;
     margin: 0 auto;
     display: flex;
     flex-flow: column nowrap;
@@ -43,7 +44,7 @@ body {
 }
 
 .link {
-    color: #d863a9;
+    color: #d863a9e2;
     text-decoration: none;
 }
 
@@ -86,13 +87,14 @@ body {
 }
 
 #ipaddress:focus {
-    border: 1px solid #9b4dca;
+    border: 1px solid #ca4da2;
 }
 
 #submit {
+    transition: all 360ms ease;
     margin-bottom: 15px;
-    background-color: #9b4dca;
-    border: 1px solid #9b4dca;
+    background-color: #ca4da2;
+    border: 1px solid #ca4da2;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
@@ -111,5 +113,6 @@ body {
 }
 
 #submit:hover {
-    color: #606c76;
+    background-color: #606c76;
+    border-color: #606c76;
 }
