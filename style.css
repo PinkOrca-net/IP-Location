@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+body {
+    background-color: #fff;
+    color-scheme: #fff;
+    height: 100vh;
+    width: calc(100vw - 32px);
+    max-width: 375px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: left;
+    justify-content: center;
+    overflow: hidden auto;
+    color: #606c76;
+    font-weight: 300;
+    font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+.title, .subtitle {
+    font-weight: 300;
+    letter-spacing: -.1rem;
+    margin-bottom: 32px;
+    margin-top: 0;
+}
+
+.title {
+    font-size: 46px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 32.2px;
+    line-height: 1.35;
+}
+
+.link {
+    color: #d863a9e2;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #606c76;
+}
+
+.paragraph {
+    letter-spacing: .01em;
+    line-height: 1.6;
+    font-weight: 300;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+#ipform {
+    letter-spacing: .01em;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: left;
+    justify-content: center;
+}
+
+#ipaddress {
+    margin-bottom: 15px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    transition: border 120ms ease-in-out;
+    background-color: transparent;
+    border: 1px solid #d1d1d1;
+    padding: 6px 10px 7px;
+    border-radius: 4px;
+    box-shadow: none;
+    height: 38px;
+    width: 100%;
+}
+
+#ipaddress:focus {
+    border: 1px solid #ca4da2;
+}
+
+#submit {
+    transition: all 360ms ease;
+    margin-bottom: 15px;
+    background-color: #ca4da2;
+    border: 1px solid #ca4da2;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    height: 38px;
+    letter-spacing: 1px;
+    line-height: 38px;
+    padding: 0 30px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-right: auto;
+}
+
+#submit:hover {
+    background-color: #606c76;
+    border-color: #606c76;
+}

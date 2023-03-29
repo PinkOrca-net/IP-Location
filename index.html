@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
-	<style>
-		body {
-			display: flex;
-			flex-direction: column;
-			align-items: start;
-			justify-content: center;
-			margin: 0 auto;
-			min-height: 100vh;
-			max-width: fit-content;
-		}
-	</style>
+    <link rel="stylesheet" href="style.css">
 	<title>IP Location</title>
 </head>
 <body>
-	<h1>IP Location</h1>
-    <h4>by <a href="https://github.com/PinkOrca-net">Pink Orca</a></h4>
-	<p>Enter an IP address to retrieve location info:</p>
+	<h1 class="title">IP Location</h1>
+    <h4 class="subtitle">by <a class="link" href="https://github.com/PinkOrca-net">Pink Orca</a></h4>
+	<p class="paragraph">Enter an IP address to retrieve location info:</p>
 	<form id="ipform">
-		<input type="text" name="ipaddress" id="ipaddress">
-		<input type="submit" value="Submit">
+		<input type="text" name="ipaddress" id="ipaddress" spellcheck="false" translate="no" required/>
+		<input type="submit" id="submit" value="Submit"/>
 	</form>
 
 	<div id="ipdetails"></div>
 
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="ipdetails.js"></script>
 </body>
 </html>

@@ -1,24 +1,34 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
 	const form = document.querySelector('#ipform');
 	const ipAddressInput = document.querySelector('#ipaddress');
 	const ipDetailsDiv = document.querySelector('#ipdetails');
 
-	form.addEventListener('submit', function(event) {
+	$.ajax('https://api.ipify.org/?format=text', {
+		type: 'GET',
+		success: data => ipAddressInput.value = data
+	});
+
+	form.addEventListener('submit', event => {
 		event.preventDefault();
 		const ip = ipAddressInput.value;
+		ipAddressInput.value = '';
 
-		const xhr = new XMLHttpRequest();
+		$.ajax(`http://ip-api.com/json/${ip}`, {
+			type: 'GET',
+			success: data => {
+				let result = ''
 
-		xhr.open('POST', 'ipdetails.php');
-		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-		xhr.onload = function() {
-			if(xhr.status === 200) {
-				ipDetailsDiv.innerHTML = xhr.responseText;
-			} else {
-				console.log('Request failed. Returned status of ' + xhr.status);
+				if (data.status === "success") {
+					result += `<p class="paragraph"><strong>IP Address:</strong> ${data.query}</p>`;
+					result += `<p class="paragraph"><strong>Country:</strong> ${data.country} (${data.countryCode})</p>`;
+					result += `<p class="paragraph"><strong>State/Province:</strong> ${data.regionName}</p>`;
+					result += `<p class="paragraph"><strong>City:</strong> ${data.city}</p>`;
+					result += `<p class="paragraph"><strong>ISP:</strong> ${data.isp}</p>`;
+				} else
+					result += `<p class="paragraph">No details found for this IP address.</p>`;
+				
+				ipDetailsDiv.innerHTML = result;
 			}
-		};
-
-		xhr.send('ip=' + encodeURIComponent(ip));
+		});
 	});
 });
